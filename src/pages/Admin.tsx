@@ -12,7 +12,7 @@ import {
   Trash2, 
   Search, 
   Filter,
-  School,
+  School as SchoolIcon,
   Users,
   MapPin,
   Settings
@@ -105,7 +105,7 @@ const Admin = () => {
                   <p className="text-sm font-medium text-gray-600">Total Schools</p>
                   <p className="text-3xl font-bold">{schoolList.length}</p>
                 </div>
-                <School className="h-10 w-10 text-blue-600" />
+                <SchoolIcon className="h-10 w-10 text-blue-600" />
               </div>
             </CardContent>
           </Card>

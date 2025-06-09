@@ -20,6 +20,10 @@ export interface UserProfile {
   academicLevel?: 'high' | 'medium' | 'low';
 }
 
+export interface SchoolWithScore extends School {
+  matchScore: number;
+}
+
 export const calculatePersonalityType = (answers: Record<number, string>): string => {
   const scores: PersonalityScore = {
     E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0
@@ -114,7 +118,7 @@ export const getPersonalityDescription = (type: string) => {
 export const recommendSchools = (
   personalityType: string,
   userProfile: UserProfile = {}
-): School[] => {
+): SchoolWithScore[] => {
   const typeChars = personalityType.split('') as ('E' | 'I' | 'S' | 'N' | 'T' | 'F' | 'J' | 'P')[];
   
   return schools
